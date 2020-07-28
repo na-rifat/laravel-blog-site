@@ -98,15 +98,15 @@ class PostController extends Controller
         }else{
             $icontents = 'noimage.png';
         }
-
-        $post = new Post;
-        $post->title=$request->input('title');
-        $post->body=$request->input('body');
-        $post->user_id=auth()->user()->id;
-        $post->cover_image =$icontents;
-        $post->save();
-        return $icontents;
-        //return redirect("/posts")->with('success', 'Post created.');
+        DB::insert('insert into posts (title, body, user_id, cover_image) values (?, ?, ?, ?)', [$request->title, $request->body, auth()->user()->id, $icontents]);
+        // $post = new Post;
+        // $post->title=$request->input('title');
+        // $post->body=$request->input('body');
+        // $post->user_id=auth()->user()->id;
+        // $post->cover_image =$icontents;
+        // $post->save();
+        //return $icontents;
+        return redirect("/posts")->with('success', 'Post created.');
     }
  
 
