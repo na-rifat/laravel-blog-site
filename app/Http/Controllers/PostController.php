@@ -14,7 +14,7 @@ DB::statement("CREATE TABLE IF NOT EXISTS posts(
     title VARCHAR(500),
     body VARCHAR(500),
     user_id INTEGER,
-    cover_image BYTEA,
+    cover_image text,
     created_at TIMESTAMP,
     updated_at TIMESTAMP
 );");
@@ -92,7 +92,7 @@ class PostController extends Controller
             // $icontents=file_get_contents_utf8($request->file('cover_image'));
             // Get the contents of the file
             // $contents = $file->openFile()->fread($file->getSize());
-            $icontents =pg_escape_bytea($request->file('cover_image'));
+            $icontents =utf8_encode(file_get_contents($request->file('cover_image')));
             // Get the contents of the file
             //$contents = $file->openFile()->fread($file->getSize());            
         }else{
