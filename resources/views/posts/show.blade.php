@@ -5,7 +5,7 @@
 <h1>{{$post->title}}</h1>
 <div class="row">
     <div class="row-md-12">
-        <img  style="width: 100%;" src="{{$post->cover_image}}" alt="cover_image">
+        <img  style="width: 100%;" src="data: image/jpeg; base64, {{$post->cover_image}}" alt="cover_image">
     </div>
 </div>
 <p>{{$post->body}}</p>
