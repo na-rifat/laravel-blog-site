@@ -9,15 +9,15 @@ use Illuminate\Support\Facades\Input;
 use Intervention\Image\Facades\Image;
 use DB;
 
-DB::statement("CREATE TABLE IF NOT EXISTS posts(      
-    id serial PRIMARY KEY NOT NULL,
-    title VARCHAR(500),
-    body VARCHAR(500),
-    user_id INTEGER,
-    cover_image text,
-    created_at TIMESTAMP,
-    updated_at TIMESTAMP
-);");
+// DB::statement("CREATE TABLE IF NOT EXISTS posts(      
+//     id serial PRIMARY KEY NOT NULL,
+//     title VARCHAR(500),
+//     body VARCHAR(500),
+//     user_id INTEGER,
+//     cover_image text,
+//     created_at TIMESTAMP,
+//     updated_at TIMESTAMP
+// );");
 
 // DB::statement("CREATE TABLE IF NOT EXISTS posts(      
 //     id INT(5) UNSIGNED PRIMARY KEY NOT NULL,

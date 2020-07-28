@@ -15,15 +15,14 @@ class CreatePostsTable extends Migration
     {
      
         
-        //  Schema::create('posts', function (Blueprint $table) {
-        //     $table->id();
-        //     $table->string('title');
-        //     $table->mediumText('body');
-        //     $table->integer('user_id');
-        //     $table->binary('cover_image');
-        //     $table->timestamps();
-        //  });
-        //  DB::statement("ALTER TABLE posts ADD cover_image  LONGBLOB");
+         Schema::create('posts', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->mediumText('body');
+            $table->integer('user_id');
+            $table->longText('cover_image');
+            $table->timestamps();
+         });        
     }
 
     /**
