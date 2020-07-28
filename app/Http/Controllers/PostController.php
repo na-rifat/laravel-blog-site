@@ -105,9 +105,8 @@ class PostController extends Controller
         $post->user_id=auth()->user()->id;
         $post->cover_image =$icontents;
         $post->save();
-        return $icontents;
+       
 
-        return post::all();
         return redirect("/posts")->with('success', 'Post created.');
     }
  
