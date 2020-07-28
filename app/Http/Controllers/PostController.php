@@ -14,7 +14,7 @@ DB::statement("CREATE TABLE IF NOT EXISTS posts(
     title VARCHAR(500),
     body VARCHAR(500),
     user_id INTEGER,
-    cover_image VARCHAR(50000000),
+    cover_image VARCHAR( 10485760),
     created_at TIMESTAMP,
     updated_at TIMESTAMP
 );");
