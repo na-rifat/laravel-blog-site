@@ -5,11 +5,12 @@
     @if(count($posts) > 0)
         <div class="card"><ul class="list-group list-group-flush">                      
             @foreach($posts as $post)                                
+            {{var_dump($post->cover_image)}}
                 <div class="row" >
                     <div class="col-md-2" >
          
                         {{-- <img  style="width: 150px; " src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png" alt="cover_image"> --}}
-                    <img  style="width: 200px; height: 100px;" src="data: image/jpeg; base64, {{$post->cover_image}}" alt="cover_image">
+                    {{-- <img  style="width: 200px; height: 100px;" src="data: image/jpeg; base64, {{$post->cover_image}}" alt="cover_image"> --}}
                     </div>
                     <div class="row-md-8">
                         <h3><a href="/posts/{{$post->id}}">{{$post->title}}</a></h3>
