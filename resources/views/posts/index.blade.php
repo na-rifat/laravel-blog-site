@@ -6,7 +6,7 @@
         <div class="card"><ul class="list-group list-group-flush">                      
             @foreach($posts as $post)                                            
                 <div class="row" >
-                    <div class="col-md-4" >
+                    <div class="col-md-3" >
          
                         {{-- <img  style="width: 150px; " src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png" alt="cover_image"> --}}
                     <img  style="width: 200px; height: 100px;" src="data: image/jpeg; base64, {{$post->cover_image}}" alt="cover_image">
