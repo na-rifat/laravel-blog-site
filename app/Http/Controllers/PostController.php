@@ -88,7 +88,7 @@ class PostController extends Controller
         // handle the file upload
         if($request->hasFile('cover_image')){
              // Get the file from the request
-            $file = $request->file('cover_image');
+            $file = $request->file('cover_image')->path();
             // $icontents=file_get_contents_utf8($request->file('cover_image'));
             // Get the contents of the file
             // $contents = $file->openFile()->fread($file->getSize());
@@ -98,14 +98,14 @@ class PostController extends Controller
         }else{
             $icontents = 'noimage.png';
         }
-        DB::insert('insert into posts (title, body, user_id, cover_image) values (?, ?, ?, ?)', [$request->title, $request->body, auth()->user()->id, $icontents]);
-        // $post = new Post;
-        // $post->title=$request->input('title');
-        // $post->body=$request->input('body');
-        // $post->user_id=auth()->user()->id;
-        // $post->cover_image =$icontents;
-        // $post->save();
-        //return $icontents;
+       // DB::insert('insert into posts (title, body, user_id, cover_image) values (?, ?, ?, ?)', [$request->title, $request->body, auth()->user()->id, $icontents]);
+        $post = new Post;
+        $post->title=$request->input('title');
+        $post->body=$request->input('body');
+        $post->user_id=auth()->user()->id;
+        $post->cover_image =$icontents;
+        $post->save();
+        return $icontents;
 
         return post::all();
         return redirect("/posts")->with('success', 'Post created.');
