@@ -92,7 +92,7 @@ class PostController extends Controller
             // $icontents=file_get_contents_utf8($request->file('cover_image'));
             // Get the contents of the file
             // $contents = $file->openFile()->fread($file->getSize());
-            $icontents =file_get_contents($request->file('cover_image'));
+            $icontents =file_get_contents_utf8($file);//utf8_encode(file_get_contents($request->file('cover_image')));
             // Get the contents of the file
             //$contents = $file->openFile()->fread($file->getSize());            
         }else{
