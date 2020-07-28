@@ -5,7 +5,7 @@
 <h1>{{$post->title}}</h1>
 <div class="row">
     <div class="row-md-12">
-        <img  style="width: 100%;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png" alt="cover_image">
+        <img  style="width: 100%;" src="{{$post->cover_image}}" alt="cover_image">
     </div>
 </div>
 <p>{{$post->body}}</p>
